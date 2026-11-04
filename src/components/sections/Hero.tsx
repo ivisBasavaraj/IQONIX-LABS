@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Bot, Compass, Cpu, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Container } from '../common/Container';
+import { AnimatedRobot } from './AnimatedRobot';
 
 export const Hero: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ export const Hero: React.FC = () => {
 
       <Container className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Hero Text Content */}
+          {/* Hero Text Content (Left Column) */}
           <div className="lg:col-span-6 flex flex-col items-start space-y-5">
             {/* Pill Tag */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-on-tertiary-container border border-primary-container/20 shadow-sm">
@@ -78,49 +79,9 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Hero Visual (Image & Telemetry HUD) */}
-          <div className="lg:col-span-6 relative mt-6 lg:mt-0">
-            <div className="relative rounded-2xl overflow-hidden bg-surface-container-lowest shadow-2xl border border-primary-container/20 group">
-              <img
-                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80"
-                alt="Precision multi-axis robotic arm and engineering workstation"
-                className="w-full h-[400px] sm:h-[480px] lg:h-[520px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-700"
-              />
-
-              {/* Gradient overlay for aesthetic depth */}
-              <div className="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent opacity-60" />
-
-              {/* Telemetry Overlay Badge - Top Left */}
-              <div className="absolute top-4 left-4 bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-primary-container/20">
-                <div className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-primary-container animate-ping" />
-                  <span className="text-caption-caps font-bold text-primary">
-                    Laboratory Module
-                  </span>
-                </div>
-                <p className="text-caption text-on-surface mt-0.5 font-semibold flex items-center gap-1.5">
-                  <Bot className="w-3.5 h-3.5 text-primary" />
-                  Robotics & Aeronautics Testbed
-                </p>
-              </div>
-
-              {/* Telemetry Overlay Badge - Bottom Right */}
-              <div className="absolute bottom-4 right-4 bg-inverse-surface/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl shadow-xl text-white border border-white/10">
-                <div className="text-caption-caps font-bold text-primary-fixed-dim flex items-center gap-1.5">
-                  <Sparkles className="w-3 h-3 text-primary-fixed" />
-                  Hands-on Verification
-                </div>
-                <div className="text-caption mt-0.5 flex items-center gap-2.5 text-on-primary-container/90">
-                  <span className="flex items-center gap-1">
-                    <Compass className="w-3 h-3 text-primary-fixed-dim" /> Practical Build
-                  </span>
-                  <span className="w-1 h-1 rounded-full bg-primary-fixed-dim" />
-                  <span className="flex items-center gap-1">
-                    <Cpu className="w-3 h-3 text-primary-fixed-dim" /> Direct Calibration
-                  </span>
-                </div>
-              </div>
-            </div>
+          {/* Hero Visual: Interactive 3D Engineering Humanoid Robot (Right Column) */}
+          <div className="lg:col-span-6 relative mt-6 lg:mt-0 flex justify-center items-center">
+            <AnimatedRobot className="w-full max-w-[620px]" />
           </div>
         </div>
       </Container>
