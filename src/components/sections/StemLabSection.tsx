@@ -100,16 +100,14 @@ export const StemLabSection: React.FC = () => {
 
         {/* Implementation Roadmap Process (01 to 05) */}
         <div className="p-6 md:p-8 rounded-3xl bg-white/[0.05] border border-white/10 mb-10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-4 border-b border-white/10">
-            <div>
-              <span className="text-caption-caps font-bold text-primary-fixed block mb-1">
-                Structured Engagement
-              </span>
-              <h3 className="text-subheading sm:text-card-title font-semibold text-white">
-                Implementation Roadmap
-              </h3>
-            </div>
-            <p className="text-caption text-on-primary-container/70 max-w-sm mt-2 md:mt-0 leading-relaxed">
+          <div className="mb-8 pb-4 border-b border-white/10">
+            <span className="text-caption-caps font-bold text-primary-fixed block mb-1">
+              Structured Engagement
+            </span>
+            <h3 className="text-subheading sm:text-card-title font-semibold text-white">
+              Implementation Roadmap
+            </h3>
+            <p className="text-caption text-on-primary-container/80 max-w-xl mt-1.5 leading-relaxed">
               Clear five-stage process ensuring smooth institution onboarding from consultation to active classroom running.
             </p>
           </div>
