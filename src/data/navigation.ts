@@ -5,13 +5,13 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', path: '/', sectionId: 'home' },
-  { label: 'About Us', path: '/about', sectionId: 'about-us' },
-  { label: 'Programs', path: '/programs', sectionId: 'programs' },
-  { label: 'STEM Lab Setup', path: '/stem-lab-setup', sectionId: 'stem-lab-setup' },
-  { label: 'Gallery', path: '/gallery', sectionId: 'gallery' },
-  { label: 'Blog / News', path: '/blog', sectionId: 'blog' },
-  { label: 'Contact', path: '/contact', sectionId: 'contact' },
+  { label: 'Home', path: '/' },
+  { label: 'About Us', path: '/about' },
+  { label: 'Programs', path: '/programs' },
+  { label: 'STEM Lab Setup', path: '/stem-lab-setup' },
+  { label: 'Gallery', path: '/gallery' },
+  { label: 'Blog / News', path: '/blog' },
+  { label: 'Contact', path: '/contact' },
 ];
 
 export const FOOTER_CURRICULUM_LINKS: NavItem[] = [

@@ -1,37 +1,24 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { X, ChevronRight, Phone, Mail } from 'lucide-react';
-import { NAV_ITEMS, NavItem } from '../../data/navigation';
+import { NAV_ITEMS } from '../../data/navigation';
 import { COMPANY_INFO } from '../../utils/constants';
 
 interface MobileMenuProps {
   isOpen: boolean;
   onClose: () => void;
-  activeSection?: string;
-  onNavigateSection?: (sectionId: string) => void;
 }
 
-export const MobileMenu: React.FC<MobileMenuProps> = ({
-  isOpen,
-  onClose,
-  activeSection = 'home',
-  onNavigateSection,
-}) => {
+export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
   const location = useLocation();
-  const isHomePage = location.pathname === '/';
 
   if (!isOpen) return null;
 
-  const handleItemClick = (e: React.MouseEvent, item: NavItem) => {
-    if (isHomePage && item.sectionId) {
-      e.preventDefault();
-      onClose();
-      if (onNavigateSection) {
-        onNavigateSection(item.sectionId);
-      }
-    } else {
-      onClose();
+  const isItemActive = (path: string) => {
+    if (path === '/') {
+      return location.pathname === '/';
     }
+    return location.pathname.startsWith(path);
   };
 
   return (
@@ -47,7 +34,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-surface-container-lowest shadow-2xl flex flex-col z-10 border-l border-primary-container/15">
         {/* Header */}
         <div className="h-20 px-6 flex items-center justify-between border-b border-primary-container/15">
-          <div className="flex items-center gap-3">
+          <Link to="/" onClick={onClose} className="flex items-center gap-3">
             <img
               src="/logo/iqonix-logo.jpg"
               alt="IQONIX LABS Logo"
@@ -57,7 +44,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               <span className="font-bold text-lg text-on-surface tracking-tight">IQONIX</span>
               <span className="font-bold text-lg text-primary-container tracking-tight">LABS</span>
             </div>
-          </div>
+          </Link>
           <button
             onClick={onClose}
             className="p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors"
@@ -76,15 +63,15 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           </div>
           <nav className="flex flex-col space-y-1">
             {NAV_ITEMS.map((item) => {
-              const isActive = activeSection === item.sectionId;
+              const active = isItemActive(item.path);
 
               return (
                 <Link
                   key={item.path}
-                  to={isHomePage ? `#${item.sectionId}` : item.path}
-                  onClick={(e) => handleItemClick(e, item)}
+                  to={item.path}
+                  onClick={onClose}
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-nav-link font-medium transition-all ${
-                    isActive
+                    active
                       ? 'bg-on-tertiary-container text-primary-container font-semibold border-l-4 border-primary-container'
                       : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low'
                   }`}
@@ -92,7 +79,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
                   <span>{item.label}</span>
                   <ChevronRight
                     className={`w-4 h-4 transition-transform ${
-                      isActive ? 'text-primary-container translate-x-0.5' : 'opacity-40'
+                      active ? 'text-primary-container translate-x-0.5' : 'opacity-40'
                     }`}
                   />
                 </Link>
@@ -103,17 +90,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           <div className="mt-6 pt-5 border-t border-primary-container/10">
             <Link
               to="/contact"
-              onClick={(e) => {
-                if (isHomePage) {
-                  e.preventDefault();
-                  onClose();
-                  if (onNavigateSection) {
-                    onNavigateSection('contact');
-                  }
-                } else {
-                  onClose();
-                }
-              }}
+              onClick={onClose}
               className="w-full h-11 flex items-center justify-center rounded-lg bg-primary-container text-white text-btn font-medium shadow-md hover:bg-secondary-container transition-all"
             >
               Request a Demo
@@ -149,3 +126,5 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
     </div>
   );
 };
+
+export default MobileMenu;
