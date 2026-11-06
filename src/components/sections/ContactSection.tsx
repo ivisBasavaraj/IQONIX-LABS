@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Mail, Phone, MapPin, Send, CheckCircle2, AlertCircle, ShieldCheck } from 'lucide-react';
 import { Container } from '../common/Container';
 import { COMPANY_INFO } from '../../utils/constants';
@@ -28,6 +29,7 @@ interface FormErrors {
 }
 
 export const ContactSection: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     organization: '',
@@ -40,6 +42,21 @@ export const ContactSection: React.FC = () => {
     message: '',
     consent: false,
   });
+
+  useEffect(() => {
+    const type = searchParams.get('type') || searchParams.get('interest');
+    if (type === 'demo') {
+      setFormData((prev) => ({ ...prev, interestArea: 'School Demonstration' }));
+    } else if (type === 'stem-lab' || type === 'lab') {
+      setFormData((prev) => ({ ...prev, interestArea: 'STEM Lab Setup' }));
+    } else if (type === 'robotics') {
+      setFormData((prev) => ({ ...prev, interestArea: 'Robotics Program' }));
+    } else if (type === 'aeronautics') {
+      setFormData((prev) => ({ ...prev, interestArea: 'Aeronautics Program' }));
+    } else if (type === 'programming') {
+      setFormData((prev) => ({ ...prev, interestArea: 'Programming / Coding' }));
+    }
+  }, [searchParams]);
 
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
