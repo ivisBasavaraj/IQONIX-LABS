@@ -11,7 +11,7 @@ interface AnimatedRobotProps {
 
 // Fallback loader while 3D assets initialize
 const RobotLoader: React.FC = () => (
-  <div className="w-full h-full min-h-[460px] flex flex-col items-center justify-center p-6">
+  <div className="w-full h-full min-h-[420px] flex flex-col items-center justify-center p-6">
     <div className="relative w-16 h-16 flex items-center justify-center mb-4">
       <div className="absolute inset-0 rounded-full border-2 border-primary-container/20 border-t-primary-container animate-spin" />
       <div className="w-10 h-10 rounded-full bg-on-tertiary-container flex items-center justify-center text-primary-container">
@@ -57,7 +57,7 @@ export const AnimatedRobot: React.FC<AnimatedRobotProps> = ({
 
   return (
     <div
-      className={`relative w-full h-[540px] sm:h-[600px] lg:h-[660px] flex items-center justify-center ${className}`}
+      className={`relative w-full h-[480px] sm:h-[520px] lg:h-[560px] flex items-center justify-center ${className}`}
     >
       {/* Soft Ambient Radial Blue Glow on Page Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[440px] h-[440px] rounded-full bg-primary-container/12 blur-3xl pointer-events-none" />
