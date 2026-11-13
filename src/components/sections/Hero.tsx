@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative w-full bg-surface-container-low overflow-hidden pt-8 md:pt-12 lg:pt-14 pb-12 md:pb-16 lg:pb-16 border-b border-primary-container/10"
+      className="relative w-full bg-surface-container-low overflow-hidden pt-2 sm:pt-4 lg:pt-5 pb-10 sm:pb-12 lg:pb-14 border-b border-primary-container/10"
     >
       {/* Decorative aerospace grid lines */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(23,105,224,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,105,224,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
