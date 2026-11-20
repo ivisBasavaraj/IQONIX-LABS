@@ -87,21 +87,22 @@ export default {
         "space-4xl": "6rem"
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"]
+        sans: ['"Times New Roman"', 'Times', 'serif'],
+        serif: ['"Times New Roman"', 'Times', 'serif'],
+        display: ['"Times New Roman"', 'Times', 'serif']
       },
       fontSize: {
-        'caption': ['0.8125rem', { lineHeight: '1.4', letterSpacing: '0.01em' }], // 13px
-        'caption-sm': ['0.75rem', { lineHeight: '1.35', letterSpacing: '0.04em' }], // 12px
-        'nav': ['0.90625rem', { lineHeight: '1.25', letterSpacing: '0' }], // 14.5px
-        'btn': ['0.90625rem', { lineHeight: '1.25', letterSpacing: '0.01em' }], // 14.5px
+        'caption': ['0.8125rem', { lineHeight: '1.4', letterSpacing: '0' }], // 13px
+        'caption-sm': ['0.75rem', { lineHeight: '1.35', letterSpacing: '0.02em' }], // 12px
+        'nav': ['0.9375rem', { lineHeight: '1.25', letterSpacing: '0' }], // 15px
+        'btn': ['0.9375rem', { lineHeight: '1.25', letterSpacing: '0.01em' }], // 15px
         'body-sm': ['0.875rem', { lineHeight: '1.55', letterSpacing: '0' }], // 14px
-        'body': ['1rem', { lineHeight: '1.625', letterSpacing: '-0.005em' }], // 16px
-        'subheading': ['1.1875rem', { lineHeight: '1.4', letterSpacing: '-0.01em' }], // 19px
-        'card-title': ['1.3125rem', { lineHeight: '1.28', letterSpacing: '-0.015em' }], // 21px
-        'section-title': ['2.125rem', { lineHeight: '1.2', letterSpacing: '-0.02em' }], // 34px
-        'page-title': ['2.375rem', { lineHeight: '1.18', letterSpacing: '-0.025em' }], // 38px
-        'hero-title': ['2.875rem', { lineHeight: '1.15', letterSpacing: '-0.03em' }], // 46px
+        'body': ['1rem', { lineHeight: '1.625', letterSpacing: '0' }], // 16px
+        'subheading': ['1.1875rem', { lineHeight: '1.4', letterSpacing: '0' }], // 19px
+        'card-title': ['1.3125rem', { lineHeight: '1.28', letterSpacing: '0' }], // 21px
+        'section-title': ['2.125rem', { lineHeight: '1.2', letterSpacing: '-0.01em' }], // 34px
+        'page-title': ['2.375rem', { lineHeight: '1.18', letterSpacing: '-0.015em' }], // 38px
+        'hero-title': ['2.875rem', { lineHeight: '1.15', letterSpacing: '-0.02em' }], // 46px
       },
       lineHeight: {
         'heading-tight': '1.15',

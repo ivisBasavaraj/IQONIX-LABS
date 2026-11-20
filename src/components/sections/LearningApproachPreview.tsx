@@ -68,7 +68,7 @@ export const LearningApproachPreview: React.FC = () => {
                 <div>
                   {/* Step Header */}
                   <div className="flex items-center justify-between mb-6">
-                    <span className="font-mono text-3xl font-extrabold text-primary-container/20 group-hover:text-primary-container/40 transition-colors">
+                    <span className="text-3xl font-extrabold text-primary-container/20 group-hover:text-primary-container/40 transition-colors">
                       {item.step}
                     </span>
                     <div

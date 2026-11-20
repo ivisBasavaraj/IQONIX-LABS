@@ -90,7 +90,7 @@ export const WhatWeOfferPreview: React.FC = () => {
                     >
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="font-mono text-xs font-bold text-on-surface-variant/50 tracking-wider">
+                    <span className="text-xs font-bold text-on-surface-variant/50 tracking-wider">
                       {item.num}
                     </span>
                   </div>
